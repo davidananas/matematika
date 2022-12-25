@@ -6,50 +6,73 @@ input.onButtonPressed(Button.AB, function () {
     pocitani()
 })
 input.onButtonPressed(Button.B, function () {
-    if (cislo1 + cislo2 == vstup) {
-        basic.showIcon(IconNames.Yes)
-        nastav()
-        basic.pause(500)
-        pocitani()
+    if (scitani == 0) {
+        if (cislo1 + cislo2 == vstup) {
+            basic.showIcon(IconNames.Yes)
+            nastav()
+            basic.pause(500)
+            pocitani()
+        } else {
+            basic.showIcon(IconNames.No)
+            nastav()
+            basic.pause(500)
+            pocitani()
+        }
     } else {
-        basic.showIcon(IconNames.No)
-        nastav()
-        basic.pause(500)
-        pocitani()
+        if (true) {
+        	
+        }
     }
 })
 function nastav () {
-    vstup = 0
-    cislo1 = randint(0, 5)
-    cislo2 = randint(0, 5)
+    if (scitani == 0) {
+        vstup = 0
+        cislo1 = randint(0, 5)
+        cislo2 = randint(0, 5)
+    } else {
+    	
+    }
 }
 function pocitani () {
-    basic.showString("" + (cislo1))
-    basic.pause(500)
-    basic.showLeds(`
-        . . # . .
-        . . # . .
-        # # # # #
-        . . # . .
-        . . # . .
-        `)
-    basic.pause(500)
-    basic.showString("" + (cislo2))
-    basic.pause(500)
-    basic.showLeds(`
-        . . . . .
-        # # # # #
-        . . . . .
-        # # # # #
-        . . . . .
-        `)
+    if (scitani == 0) {
+        basic.showString("" + (cislo1))
+        basic.pause(500)
+        basic.showLeds(`
+            . . # . .
+            . . # . .
+            # # # # #
+            . . # . .
+            . . # . .
+            `)
+        basic.pause(500)
+        basic.showString("" + (cislo2))
+        basic.pause(500)
+        basic.showLeds(`
+            . . . . .
+            # # # # #
+            . . . . .
+            # # # # #
+            . . . . .
+            `)
+    } else {
+    	
+    }
 }
 input.onLogoEvent(TouchButtonEvent.Pressed, function () {
     control.reset()
 })
+let cislo_od = 0
+let cislo_1_od = 0
 let cislo2 = 0
 let cislo1 = 0
 let vstup = 0
+let scitani = 0
+scitani = 0
 vstup = 0
-cislo1 = randint(0, 5)
-cislo2 = randint(0, 5)
+if (scitani == 0) {
+    cislo1 = randint(0, 5)
+    cislo2 = randint(0, 5)
+} else {
+    cislo_1_od = 0
+    cislo_od = 0
+}
