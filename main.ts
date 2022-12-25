@@ -24,6 +24,7 @@ input.onButtonPressed(Button.B, function () {
             pocitani()
         } else {
             basic.showIcon(IconNames.No)
+            game.addScore(-1)
             game.removeLife(1)
             nastav()
             basic.pause(500)
@@ -38,6 +39,7 @@ input.onButtonPressed(Button.B, function () {
             pocitani()
         } else {
             basic.showIcon(IconNames.No)
+            game.addScore(-1)
             game.removeLife(1)
             basic.showNumber(cislo_od - cislo_1_od)
             nastav()
